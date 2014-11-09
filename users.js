@@ -8,9 +8,12 @@ var express = require('express')
   , local = require('passport-local').Strategy
 ;
 
+
+
 //middleware function
 module.exports = function (req, res, next) {
   log('users called');
+  
   passport.use(new local(
   function(username, password, done) {
     User.findOne({ username: username }, function(err, user) {
@@ -24,6 +27,5 @@ module.exports = function (req, res, next) {
       return done(null, user);
     });
   }
-
   next();
 }
