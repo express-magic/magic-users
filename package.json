@@ -5,6 +5,7 @@
   "main": "./users.js",
   "dependencies": {
     "express": "^4.10.1",
+    "magic-db": "git://github.com/express-magic/magic-db",
     "magic-log": "git://github.com/express-magic/magic-log",
     "passport": "^0.2.1",
     "passport-local": "^1.0.0"
