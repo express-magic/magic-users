@@ -51,11 +51,12 @@ exports.init = function (schema, next) {
     host:   { type: String, index: true }
   , role:   { type: String, default: 'subscriber', index: true }
   });
-  
 
   Roles.validatesInclusionOf('role', {in: ['subscriber', 'editor', 'administrator']});
 
-  User.hasMany(Roles, { as: 'roles', foreignKey: 'userId' } );
+  User.hasMany(Roles, { as: 'roles', foreignKey: 'userId' });
+
+  Meta.belongsTo(User, { as: 'meta', foreignKey: 'userId' });
 
   User.prototype.meta = Meta;
   User.prototype.Roles = Roles;
