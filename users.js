@@ -14,12 +14,7 @@ exports.init = function (schema, next) {
 
   User.validatesPresenceOf('name', 'email', 'pass');
   User.validatesUniquenessOf('name', {message: 'name already exists'});
-  User.validatesLengthOf('pass', {
-    min: 10, 
-    message: {
-      min: 'password too short (min of ' + 10 + ' chars)'}
-    }
-  );
+  User.validatesLengthOf('pass', {min: 10, message: {min: 'password too short (min of 10 chars)'}});
   User.validatesUniquenessOf('email', { message: 'email already in use' });
 
   User.prototype.validatePassword = function(name, pass, next) {
