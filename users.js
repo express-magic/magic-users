@@ -1,5 +1,4 @@
 'use strict';
-
 var log = require('magic-log');
 
 //middleware function
@@ -61,5 +60,5 @@ exports.init = function (schema, next) {
   User.prototype.meta = Meta;
   User.prototype.Roles = Roles;
 
-  next();
+  if ( typeof next === 'function' ) { return next(); }  
 }
