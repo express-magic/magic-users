@@ -4,7 +4,7 @@
   "private": true,
   "main": "./users.js",
   "dependencies": {
-    "express": "^4.10.1",
+    "express": "4.10.2",
     "magic-db": "git://github.com/express-magic/magic-db",
     "magic-log": "git://github.com/express-magic/magic-log",
     "passport": "^0.2.1",
